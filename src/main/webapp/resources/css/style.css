@@ -1,0 +1,30 @@
+/*For login page*/
+.main {
+margin: 50px;
+}
+
+.positionByCenter {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    margin: -103px 0px 0px -150px;
+}
+
+.border {
+    border-style: outset;
+    margin-bottom: 20px;
+}
+.content {
+    background-color: #f7f7f7;
+}
+
+.form-actions {
+    background-color: #efefef;
+}
+
+.optionButton{
+    width: 9em;
+}
+                                                                                                                                              text-align: center; }
+/*For Account Page*/
+

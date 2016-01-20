@@ -1,0 +1,49 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+    <!--<http pattern="/login" security="none"/>-->
+    <!--<http pattern="/j_spring_security_check" security="none"/>-->
+    <!--<http pattern="/resources/**" security="none"/>-->
+    <!--<http pattern="/j_spring_security_check" security="none"/>-->
+
+
+
+    <http use-expressions="true" auto-config="true">
+        <!--<intercept-url pattern="/home/**" access="isAuthenticated()"/>-->
+
+        <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/home" access="permitAll" />
+        <form-login  login-page="/login"
+                     username-parameter="uuser"
+                     password-parameter="ppassword"
+                     default-target-url="/home"
+                     authentication-failure-url="/login?blabla=trololo" />
+
+        <!--<form-login
+                login-page="/login"
+                default-target-url="/home"
+                authentication-failure-url="/login?blabla=trololo"/>-->
+
+                <!--authentication-success-handler-ref="myAuthenticationSuccessHandler"/>-->
+        <!--<logout logout-url="/logout" logout-success-url="/home"/>-->
+        <csrf/>
+    </http>
+
+    <!--<beans:bean id="myAuthenticationSuccessHandler" class="com.bankSystem.security.MySimpleUrlAuthenticationSuccessHandler"/>-->
+
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_USER"/>
+                <!--<user name="anna" password="anna" authorities="User"/>-->
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
