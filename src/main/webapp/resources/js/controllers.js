@@ -44,18 +44,6 @@ bankSystem.controller('globalCtrl', function($scope){
 bankSystem.controller('accountsCtrl', ['$scope', '$http', function ($scope, $http){
 
 
-    $scope.gridOptions = {
-        columnDefs: [
-            { field: 'name' },
-            { field: 'amount', name: 'Number', cellFilter: 'fractionFilter' },
-            { field: 'amount', name: 'Currency', cellFilter: 'currencyFilter:this' }
-        ]
-    };
-
-    $http.get('data.json')
-        .success(function (data) {
-            $scope.gridOptions.data = data;
-        });
 
     console.log("--- AccountsCtrl ---");
 }]);
