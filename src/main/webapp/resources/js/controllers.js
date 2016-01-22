@@ -12,7 +12,7 @@ bankSystem.config(function($stateProvider, $urlRouterProvider) {
             controller: "accountsCtrl",
             templateUrl: "/resources/templates/accounts.html"
         }).state('newAccount', {
-                url: "/newAccount",
+                url: "/accounts/newAccount",
                 controller: "newAccountCtrl",
                 templateUrl: "/resources/templates/newAccounts.html"
               })
@@ -21,7 +21,18 @@ bankSystem.config(function($stateProvider, $urlRouterProvider) {
             controller: "operationsCtrl",
             templateUrl: "/resources/templates/operations.html"
 
-        }).state("reports", {
+        }).state("replenishAccount", {
+                url:"/operations/replenishAccount",
+                controller: "replenishAccountCtrl",
+                templateUrl: "/resources/templates/replenishAccount.html"
+
+            }).state("transferMoney", {
+                url:"/operations/transferMoney",
+                controller: "transferMoneyCtrl",
+                templateUrl: "/resources/templates/transferMoney.html"
+
+            })
+        .state("reports", {
             url:"/reports",
             controller: "reportsCtrl",
             templateUrl: "/resources/templates/reports.html"
@@ -71,33 +82,57 @@ bankSystem.controller('globalCtrl', ['$scope', '$http', function($scope, $http){
 bankSystem.controller('accountsCtrl', ['$scope', '$http', function ($scope, $http){
 
     $scope.rowCollection = [
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', balance: '13000', currency: 'UAN'}
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
     ];
 
     console.log("--- AccountsCtrl ---");
@@ -108,13 +143,26 @@ bankSystem.controller('newAccountCtrl', ['$scope', '$http', function ($scope, $h
     console.log("--- newAccountCtrl ---");
 }]);
 
+
+//--------------------------------------------------------
 // ---- Operations controller ----
-bankSystem.controller('operationsCtrl', function($scope){
+bankSystem.controller('operationsCtrl', ['$scope', function($scope){
     console.log("--- OperationsCtrl ---");
-});
+}]);
+
+// ---- Replenish account controller ----
+bankSystem.controller('replenishAccountCtrl', ['$scope', function($scope){
+    console.log("--- replenishAccountCtrl ---");
+}]);
+
+// ---- Transfer money controller ----
+bankSystem.controller('transferMoneyCtrl', ['$scope', function($scope){
+    console.log("--- transferMoneyCtrl ---");
+}]);
 
 
+//--------------------------------------------------------
 // ---- Reports controller ----
-bankSystem.controller('reportsCtrl', function($scope){
+bankSystem.controller('reportsCtrl', ['$scope', function($scope){
     console.log("--- ReportsCtrl ---");
-});
+}]);

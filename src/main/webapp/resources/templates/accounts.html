@@ -11,27 +11,39 @@
 <table st-table="rowCollection" class="table table-striped table-border">
     <thead>
     <tr>
-        <th st-sort="accountNumber" ng-bind="dataTransfer.accounts_table_accountNumber"></th>
-        <th st-sort="balance" ng-bind="dataTransfer.accounts_table_balance"></th>
-        <th st-sort="currency" ng-bind="dataTransfer.accounts_table_currency"></th>
-
+        <th st-sort="accountNumber" ng-bind="dataTransfer.accounts_table_accountNumber" class="text-center" style="width: 13%"></th>
+        <th st-sort="accountName" ng-bind="dataTransfer.accounts_table_accountName"></th>
+        <th st-sort="accountType" ng-bind="dataTransfer.accounts_table_accountType"></th>
+        <th st-sort="balance" ng-bind="dataTransfer.accounts_table_balance" class="text-center" style="width: 15%"></th>
+        <th st-sort="currency" ng-bind="dataTransfer.accounts_table_currency" class="text-center"  style="width: 6%"></th>
+        <th st-sort="currency" ng-bind="dataTransfer.accounts_table_operationsWithAccount" class="text-center"></th>
     </tr>
     <tr>
         <th colspan="1"><input st-search="accountNumber" class="form-control" placeholder={{dataTransfer.accounts_table_searchByAccountNumber}} type="text"/></th>
+        <th colspan="1"><input st-search="accountName" class="form-control" placeholder={{dataTransfer.accounts_table_searchByAccountName}} type="text"/></th>
+        <th colspan="1"><input st-search="accountType" class="form-control" placeholder={{dataTransfer.accounts_table_searchByAccountType}} type="text"/></th>
         <th colspan="1"><input st-search="balance" class="form-control" placeholder={{dataTransfer.accounts_table_searchByBalance}} type="text"/></th>
         <th colspan="1"><input st-search="currency" class="form-control" placeholder={{dataTransfer.accounts_table_searchByCurrency}} type="text"/></th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="row in rowCollection">
-        <td>{{row.accountNumber}}</td>
-        <td>{{row.balance}}</td>
-        <td>{{row.currency}}</td>
+        <td class="text-center">{{row.accountNumber}}</td>
+        <td>{{row.accountName}}</td>
+        <td>{{row.accountType}}</td>
+        <td class="text-right">{{row.balance}}</td>
+        <td class="text-center">{{row.currency}}</td>
+        <td class="text-center">
+            <a ui-sref="replenishAccount" ng-bind="dataTransfer.label_replenishAccount"></a><br>
+            <a ui-sref="transferMoney" ng-bind="dataTransfer.label_transferMoney"></a><br>
+            <a ui-sref="reports" ng-bind="dataTransfer.button_reports"></a><br>
+            <a ng-bind="dataTransfer.label_closeAccount"></a>
+        </td>
     </tr>
     </tbody>
     <tfoot>
     <tr>
-        <td class="text-center" st-pagination="" st-items-by-page="10" colspan="3">
+        <td class="text-center" st-pagination="" st-items-by-page="5" colspan="6">
         </td>
     </tr>
     </tfoot>

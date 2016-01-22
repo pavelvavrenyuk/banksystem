@@ -8,9 +8,18 @@
     "accounts_button_newAccount" : "Новый счет",
     "accounts_label_yourAccounts" : "Ваши счета",
     "accounts_table_accountNumber" : "Номер счета",
+    "accounts_table_accountName" : "Название счета",
+    "accounts_table_accountType" : "Тип счета",
     "accounts_table_balance" : "Баланс",
     "accounts_table_currency" : "Валюта",
-    "accounts_table_searchByAccountNumber" : "поиск по номеру счета ...",
+    "accounts_table_operationsWithAccount" : "Операции с аккаунтом",
+    "accounts_table_searchByAccountNumber" : "поиск по номеру ...",
+    "accounts_table_searchByAccountName" : "поиск по имени счета ...",
+    "accounts_table_searchByAccountType" : "поиск по типу счета ...",
     "accounts_table_searchByBalance" : "поиск по балансу ...",
-    "accounts_table_searchByCurrency" : "поиск по валюте ..."
+    "accounts_table_searchByCurrency" : "поиск по валюте ...",
+
+    "label_closeAccount" : "Закрыть счет",
+    "label_transferMoney" : "Перевод средств",
+    "label_replenishAccount" : "Пополнить счет"
   }

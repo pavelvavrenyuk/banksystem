@@ -8,9 +8,18 @@
     "accounts_button_newAccount" : "New account",
     "accounts_label_yourAccounts" : "Your accounts",
     "accounts_table_accountNumber" : "Account number",
+    "accounts_table_accountName" : "Account name",
+    "accounts_table_accountType" : "Account type",
     "accounts_table_balance" : "Balance",
     "accounts_table_currency" : "Currency",
-    "accounts_table_searchByAccountNumber" : "search by account number ...",
+    "accounts_table_operationsWithAccount" : "Operations with account",
+    "accounts_table_searchByAccountNumber" : "search by number ...",
+    "accounts_table_searchByAccountName" : "search by account name ...",
+    "accounts_table_searchByAccountType" : "search by account type ...",
     "accounts_table_searchByBalance" : "search by balance ...",
-    "accounts_table_searchByCurrency" : "search by currency ..."
+    "accounts_table_searchByCurrency" : "search by currency ...",
+
+    "label_closeAccount" : "Close account",
+    "label_transferMoney" : "Transfer money",
+    "label_replenishAccount" : "Replenish account"
   }
