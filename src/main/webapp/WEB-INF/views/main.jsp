@@ -9,7 +9,7 @@
 
         <script src="/resources/libs/bower_components/angular/angular.min.js"></script>
         <script src="/resources/libs/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="/resources/libs/bower_components/angular-ui-grid/ui-grid.min.js"></script>
+        <script src="/resources/libs/bower_components/angular-smart-table/dist/smart-table.min.js"></script>
         <script src="/resources/js/app.js"></script>
         <script src="/resources/js/controllers.js"></script>
 
@@ -26,6 +26,12 @@
     <security:authorize access="isAuthenticated()">
     <div id="mainContainer" class="main" ng-controller="globalCtrl">
 
+        <div id="language" class="row">
+            <select id="languageSelect" name="select" ng-model="language" ng-click="changeLanguage()">
+                <option value="en" ng-bind="english">English</option>
+                <option value="ru" ng-bind="russian"></option>
+            </select>
+        </div>
             <div id="rowWithLogo" class="row">
                 <div id="bankLogo" class="col-md-1 col-md-offset-5">
                     <img src="/resources/img/logo.png"><br><br>
@@ -34,30 +40,39 @@
 
             <div id="rowWithEmailAndLogout" class="row">
                 <div id="userEmail" class="col-md-4">
-                    <h4>User email: <security:authentication property="principal.username" /></h4>
+                    <h3>
+                        <span ng-bind="dataTransfer.user_email"></span>: <b><security:authentication property="principal.username" /></b>
+                    </h3>
+
                 </div>
                 <div id="Logout" class="col-md-1 col-md-offset-7">
                     <a id="logoutLink" ng-href="${pageContext.request.contextPath}/logout">
-                        <h4>Logout</h4>
+                        <h4 ng-bind="dataTransfer.link_logout"></h4>
                     </a>
                 </div>
             </div>
 
-            <div id="mainBorder" class="row border"></div>
+            <div id="mainBorder" class="row border-line"></div>
 
             <div class="row">
-                <div id="options" class="col-md-1 ">
+                <div id="options" class="col-md-2">
                     <div id="button1" class="form-group">
-                        <button type="submit" class="btn btn-default optionButton" ui-sref="accounts">Accounts</button>
+                        <button type="submit" class="btn btn-default optionButtonOptions" ui-sref="accounts">
+                            <h4 ng-bind="dataTransfer.button_accounts"></h4>
+                        </button>
                     </div>
                     <div id="button2" class="form-group">
-                        <button type="submit" class="btn btn-default optionButton" ui-sref="operations">Operations</button>
+                        <button type="submit" class="btn btn-default optionButtonOptions" ui-sref="operations">
+                            <h4 ng-bind="dataTransfer.button_operations"></h4>
+                        </button>
                     </div>
                     <div id="button3" class="form-group">
-                        <button type="submit" class="btn btn-default optionButton" ui-sref="reports">Reports</button>
+                        <button type="submit" class="btn btn-default optionButtonOptions" ui-sref="reports">
+                            <h4 ng-bind="dataTransfer.button_reports"></h4>
+                        </button>
                     </div>
                 </div>
-                <div id="contentView" class="col-md-11" ui-view></div>
+                <div id="contentView" class="col-md-10" ui-view></div>
             </div>
         </div>
 

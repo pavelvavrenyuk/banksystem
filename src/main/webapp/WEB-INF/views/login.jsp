@@ -15,8 +15,6 @@
 
         <img src="${pageContext.request.contextPath}    /resources/img/logo.png"><br><br>
 
-
-
         <c:if test="${param.error != null}">
             <div style="color:red">
                 <p>Username or password is incorrect! Please try again!!!</p>

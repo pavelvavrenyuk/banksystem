@@ -5,25 +5,30 @@ margin: 50px;
 
 .positionByCenter {
     position: absolute;
-    top: 30%;
-    left: 35%;
+    top: 35%;
+    left: 50%;
     margin: -103px 0px 0px -150px;
 }
 
-.border {
+.border-line {
     border-style: outset;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.content {
+
+.table-border {
+    border-style: double;
+}
+/*.content {
     background-color: #f7f7f7;
 }
 
 .form-actions {
     background-color: #efefef;
-}
+}*/
 
-.optionButton{
-    width: 9em;
+.optionButtonOptions{
+    /*font-size: large !important;*/
+    width: 80%;
 }
                                                                                                                                               text-align: center; }
 /*For Account Page*/

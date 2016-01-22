@@ -1,0 +1,16 @@
+
+  {
+    "user_email" : "Your email",
+    "link_logout" : "Logout",
+    "button_accounts" : "Accounts",
+    "button_operations" : "Operations",
+    "button_reports" : "Reports",
+    "accounts_button_newAccount" : "New account",
+    "accounts_label_yourAccounts" : "Your accounts",
+    "accounts_table_accountNumber" : "Account number",
+    "accounts_table_balance" : "Balance",
+    "accounts_table_currency" : "Currency",
+    "accounts_table_searchByAccountNumber" : "search by account number ...",
+    "accounts_table_searchByBalance" : "search by balance ...",
+    "accounts_table_searchByCurrency" : "search by currency ..."
+  }
