@@ -13,9 +13,6 @@
         <script src="/resources/js/app.js"></script>
         <script src="/resources/js/controllers.js"></script>
 
-        <script>
-
-        </script>
     </head>
     <body ng-app="bankSystem">
 
@@ -26,14 +23,14 @@
     <security:authorize access="isAuthenticated()">
     <div id="mainContainer" class="main" ng-controller="globalCtrl">
 
-        <div id="language" class="row">
-            <select id="languageSelect" name="select" ng-model="language" ng-click="changeLanguage()">
-                <option value="en" ng-bind="english">English</option>
-                <option value="ru" ng-bind="russian"></option>
-            </select>
-        </div>
             <div id="rowWithLogo" class="row">
-                <div id="bankLogo" class="col-md-1 col-md-offset-5">
+                <div id="language" class="col-md-1">
+                    <select id="languageSelect" name="select" ng-model="language" ng-click="changeLanguage()">
+                        <option value="en" ng-bind="english"></option>
+                        <option value="ru" ng-bind="russian"></option>
+                    </select>
+                </div>
+                <div id="bankLogo" class="col-md-1 col-md-offset-4">
                     <img src="/resources/img/logo.png"><br><br>
                 </div>
             </div>
