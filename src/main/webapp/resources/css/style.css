@@ -1,6 +1,6 @@
 /*For login page*/
 .main {
-margin: 50px;
+margin: 18px;
 }
 
 .positionByCenter {
@@ -18,6 +18,31 @@ margin: 50px;
 .table-border {
     border-style: double;
 }
+
+.margin-top-10px {
+    margin-top: 10px;
+}
+
+.margin-bottom-60px {
+    margin-bottom: 60px;
+}
+
+.margin-top-50px {
+    margin-top: 50px;
+}
+
+.margin-bottom-20px {
+    margin-bottom: 20px;
+}
+
+.border-color-error {
+    border-color:red !important;
+}
+
+.text-color-red {
+    color: #a70319;
+}
+
 /*.content {
     background-color: #f7f7f7;
 }

@@ -1,1 +1,50 @@
-<div>New Account Page</div>
+<div id="newAccountView" class="table-border">
+    <div id="title" class="row  margin-top-10px  margin-bottom-60px">
+        <div id="linkToYourAccounts" class="col-md-1">
+            <h4 class="text-right"><a ui-sref="accounts" ng-bind="dataTransfer.button_accounts"></a></h4>
+        </div>
+        <div id="symbol" class="col-md-1 text-center">
+            <h4 ng-bind='">>>"'></h4>
+        </div>
+        <div id="labelNewAccount" class="col-md-2">
+            <h4 ng-bind="dataTransfer.accounts_button_newAccount"></h4>
+        </div>
+    </div>
+
+    <div id="accountName" class="row">
+        <div id="accountNameLabel" class="col-md-2 col-md-offset-1 text-right">
+            <h4 ng-bind="dataTransfer.accounts_table_accountName"></h4>
+        </div>
+        <div id="accountNameInput" class="col-md-2">
+            <input class="form-control" ng-class="{'border-color-error':isError}" placeholder={{dataTransfer.label_inputNewAccountName}} ng-model="accountName" type="text"/>
+        </div>
+        <div id="inputError" class="col-md-3 text-left">
+            <h5 ng-show="isError" class="text-color-red" ng-bind="dataTransfer.label_incorrectlyEnteredName"></h5>
+        </div>
+    </div>
+
+    <div id="currency" class="row margin-top-10px">
+        <div id="currencyLabel" class="col-md-2 col-md-offset-1 text-right">
+            <h4 ng-bind="dataTransfer.accounts_table_currency"></h4>
+        </div>
+        <div class="col-md-2">
+            <select id="currencyList" style='margin-top: 8px' ng-model="currency">
+                <option ng-repeat="currensy in currensyList" value={{currensy}} >{{currensy}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row margin-top-50px margin-bottom-20px">
+        <div id="accountsList" class="col-md-2 col-md-offset-1 optionButtonOptions text-right">
+            <button type="submit" class="btn btn-default" ng-click="createNewAccount()">
+                <h4 ng-bind="dataTransfer.button_create"></h4>
+            </button>
+        </div>
+        <div id="openAccount" class="col-md-2 optionButtonOptions text-left">
+            <button type="submit" class="btn btn-default" ui-sref="accounts">
+                <h4 ng-bind="dataTransfer.button_cancel"></h4>
+            </button>
+        </div>
+    </div>
+
+</div>

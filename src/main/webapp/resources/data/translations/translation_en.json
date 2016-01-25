@@ -5,6 +5,8 @@
     "button_accounts" : "Accounts",
     "button_operations" : "Operations",
     "button_reports" : "Reports",
+    "button_create" : "Create",
+    "button_cancel" : "Cancel",
     "accounts_button_newAccount" : "New account",
     "accounts_label_yourAccounts" : "Your accounts",
     "accounts_table_accountNumber" : "Account number",
@@ -21,5 +23,7 @@
 
     "label_closeAccount" : "Close account",
     "label_transferMoney" : "Transfer money",
-    "label_replenishAccount" : "Replenish account"
+    "label_replenishAccount" : "Replenish account",
+    "label_inputNewAccountName" : "My new account",
+    "label_incorrectlyEnteredName" : "Enter the correct account name"
   }

@@ -140,6 +140,21 @@ bankSystem.controller('accountsCtrl', ['$scope', '$http', function ($scope, $htt
 
 // ---- newAccount controller ----
 bankSystem.controller('newAccountCtrl', ['$scope', '$http', function ($scope, $http){
+    $scope.currensyList = ["USD", "RUB", "UAN"];
+    $scope.currency = "UAN";
+    $scope.isError = false;
+
+    $scope.createNewAccount = function(){
+        if($scope.accountName == undefined || $scope.accountName == ""){
+            $scope.isError = true;
+        } else{
+            console.log("accountName: " + $scope.accountName);
+            console.log("currency: " + $scope.currency);
+            $scope.isError = false;
+        }
+    };
+
+
     console.log("--- newAccountCtrl ---");
 }]);
 
