@@ -69,7 +69,7 @@
                         </button>
                     </div>
                 </div>
-                <div id="contentView" class="col-md-10" ui-view></div>
+                <div id="contentView" class="col-md-10 global-border" ui-view></div>
             </div>
         </div>
 

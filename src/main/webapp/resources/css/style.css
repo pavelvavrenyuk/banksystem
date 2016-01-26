@@ -15,8 +15,44 @@ margin: 18px;
     margin-bottom: 30px;
 }
 
-.table-border {
+.global-border {
     border-style: double;
+}
+
+.table-border {
+    border-style: solid;
+}
+
+.newAccountButton {
+    margin-bottom: 15px !important;
+    margin-top: 15px;
+    background-color: #79d1ad !important;
+    border-color: #255625 !important;
+}
+
+.newAccountButton:hover {
+    background-color: #29bc67 !important;
+    border-color: #255625 !important;
+}
+
+.createNewAccountButton {
+    background-color: lightskyblue !important;
+    border-color: #204d74 !important;
+}
+
+.createNewAccountButton:hover {
+    background-color: #3db1ff !important;
+    border-color: #204d74 !important;
+}
+
+.cancelNewAccountButton {
+    background-color: #f7cec7 !important;
+    border-color: #ee4a47 !important;
+}
+
+.cancelNewAccountButton:hover {
+    background-color: #f27c6d !important;
+    border-color: #ee4a47 !important;
 }
 
 .margin-top-10px {
