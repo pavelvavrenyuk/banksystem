@@ -1,1 +1,20 @@
-<div>Операции</div>
+<div id="optionsView">
+    <div class="row margin-bottom-60px">
+        <div class="col-md-1 col-md-offset-1 text-right">
+            <h3 ng-bind="dataTransfer.button_operations"></h3>
+        </div>
+    </div>
+
+    <div class="row margin-bottom-20px">
+        <div class="col-md-2 col-md-offset-1 text-left">
+            <button type="submit" class="btn btn-default optionButtonOptions" ui-sref="replenishAccount">
+                <h5 ng-bind="dataTransfer.label_replenishAccount"></h5>
+            </button>
+        </div>
+        <div class="col-md-2 col-md-offset-1 text-right">
+            <button type="submit" class="btn btn-default optionButtonOptions" ui-sref="transferMoney">
+                <h5 ng-bind="dataTransfer.label_transferMoney"></h5>
+            </button>
+        </div>
+    </div>
+</div>
