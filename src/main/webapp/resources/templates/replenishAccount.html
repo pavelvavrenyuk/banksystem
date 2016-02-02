@@ -1,1 +1,60 @@
-<div>Пополнение счета</div>
+<div id="replenishAccount">
+    <div id="title" class="row margin-bottom-3pc">
+        <div id="linkToYourAccounts" class="col-md-1">
+            <h4 class="text-right"><a ui-sref="accounts" ng-bind="dataTransfer.button_accounts"></a></h4>
+        </div>
+        <div id="symbol" class="col-md-1 text-center">
+            <h4>>>></h4>
+        </div>
+        <div id="numberSelectedAccount" class="col-md-1">
+            <h4 ng-bind="selectedAccountObj.accountNumber"></h4>
+        </div>
+        <div id="symbol2" class="col-md-1 text-center">
+            <h4>>>></h4>
+        </div>
+        <div id="labelReplenishAccount" class="col-md-2">
+            <h4 ng-bind="dataTransfer.label_replenishAccount"></h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h4 class="margin-bottom-3pc margin-left-5pc" style="font-style: italic">
+                <span ng-bind="dataTransfer.accounts_label_yourAccounts"></span>
+            </h4>
+            <div style="width: 80%">
+                <selector size-value={{accountObjects.length}} >
+                <!-- directive - 'selector' -->
+                </selector>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row margin-top-8pc">
+                <div class="col-md-2 text-right">
+                    <span style="font-size: 19px;" ng-bind="dataTransfer.label_sum"></span>
+                </div>
+                <div class="col-md-2">
+                    <input style="top: 60%;" class="form-control" ng-class="{'border-color-error':isSumToReplenishNotCorrect}" type="text" ng-model="sumToReplenish"/>
+                </div>
+                <div class="col-md-1" style="margin-top: 0.5%;">
+                    <span style="font-size: 18px;" class="text-left" ng-bind="selectedAccountObj.currency"></span>
+                </div>
+                <div id="sumToTransferIsIncorrect" class="col-md-5 text-left">
+                    <h5 ng-show="isSumToReplenishNotCorrect" class="text-color-red" ng-bind="dataTransfer.label_incorrectlyEnteredSumToTransfer"></h5>
+                </div>
+            </div>
+            <div class="row margin-top-8pc margin-bottom-6pc">
+                <div id="replenish" class="col-md-2 col-md-offset-1 optionButtonOptions text-right">
+                    <button type="submit" class="btn btn-default createNewAccountButton" ng-click="replenishAccount()">
+                        <h4 ng-bind="dataTransfer.button_replenish"></h4>
+                    </button>
+                </div>
+                <div id="back" class="col-md-2 optionButtonOptions text-left">
+                    <button type="submit" class="btn btn-default cancelNewAccountButton" ui-sref="operations">
+                        <h4 ng-bind="dataTransfer.button_back"></h4>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

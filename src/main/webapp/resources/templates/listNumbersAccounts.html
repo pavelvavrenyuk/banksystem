@@ -1,0 +1,8 @@
+<select id="listNumbersAccounts"
+        class="form-control margin-bottom-6pc"
+        style="font-size: large"
+        ng-options="account.accountNumber for account in accountObjects"
+        ng-model="selectedAccountObj"
+        ng-init="selectedAccountObj = accountObjects[0]">
+        <!--ng-change="selectedAccountOnClick()">-->
+</select>

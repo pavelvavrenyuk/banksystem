@@ -7,6 +7,8 @@
     "button_reports" : "Отчеты",
     "button_create" : "Создать",
     "button_cancel" : "Отмена",
+    "button_replenish" : "Пополнить",
+    "button_back" : "Назад",
     "accounts_button_newAccount" : "Новый счет",
     "accounts_label_yourAccounts" : "Ваши счета",
     "accounts_table_accountNumber" : "Номер счета",
@@ -25,5 +27,8 @@
     "label_transferMoney" : "Перевод средств",
     "label_replenishAccount" : "Пополнить счет",
     "label_inputNewAccountName" : "Мой новый счет",
-    "label_incorrectlyEnteredName" : "Введите корректное имя счета"
+    "label_incorrectlyEnteredName" : "Введите корректное имя счета",
+    "label_incorrectlyEnteredSumToTransfer" : "Введите корректную сумму для перевода",
+
+    "label_sum" : "Сумма"
   }

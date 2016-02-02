@@ -16,10 +16,10 @@
             <h4 ng-bind="dataTransfer.accounts_table_accountName"></h4>
         </div>
         <div id="accountNameInput" class="col-md-2">
-            <input class="form-control" ng-class="{'border-color-error':isError}" placeholder={{dataTransfer.label_inputNewAccountName}} ng-model="accountName" type="text"/>
+            <input class="form-control" ng-class="{'border-color-error':isAccountNameNotCorrect}" placeholder={{dataTransfer.label_inputNewAccountName}} ng-model="accountName" type="text"/>
         </div>
-        <div id="inputError" class="col-md-3 text-left">
-            <h5 ng-show="isError" class="text-color-red" ng-bind="dataTransfer.label_incorrectlyEnteredName"></h5>
+        <div id="inputError" class="col-md-5 text-left">
+            <h5 ng-show="isAccountNameNotCorrect" class="text-color-red" ng-bind="dataTransfer.label_incorrectlyEnteredName"></h5>
         </div>
     </div>
 

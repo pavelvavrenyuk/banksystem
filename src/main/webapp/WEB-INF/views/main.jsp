@@ -8,10 +8,12 @@
         <link href="/resources/libs/css/bootstrap.css" rel="stylesheet">
 
         <script src="/resources/libs/bower_components/angular/angular.min.js"></script>
+        <script src="/resources/libs/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="/resources/libs/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="/resources/libs/bower_components/angular-smart-table/dist/smart-table.min.js"></script>
         <script src="/resources/js/app.js"></script>
         <script src="/resources/js/controllers.js"></script>
+        <script src="/resources/js/directivs.js"></script>
 
     </head>
     <body ng-app="bankSystem">
@@ -26,7 +28,7 @@
             <div id="rowWithLogo" class="row">
                 <div id="language" class="col-md-1">
                     <select id="languageSelect" name="select" ng-model="language" ng-click="changeLanguage()">
-                        <option value="en" ng-bind="english"></option>
+                        <option value="en" ng-bind="english" ></option>
                         <option value="ru" ng-bind="russian"></option>
                     </select>
                 </div>

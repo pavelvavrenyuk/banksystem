@@ -74,66 +74,31 @@ bankSystem.controller('globalCtrl', ['$scope', '$http', function($scope, $http){
 
 
 
+    $scope.accountObjects = [
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
+        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
+        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
+    ];
+
     console.log("--- GlobalCtrl ---");
 }]);
 
 
 // ---- Account controller ----
 bankSystem.controller('accountsCtrl', ['$scope', '$http', function ($scope, $http){
-
-    $scope.rowCollection = [
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-        {accountNumber: '3849584938', accountName: "Текущий счет физического лица", accountType: "Текущий счет", balance: '999', currency: 'USD'},
-        {accountNumber: '5940392719', accountName: "Ощадный+", accountType: "Ощадный+", balance: '150000', currency: 'RUB'},
-        {accountNumber: '7690104957', accountName: "Депозитный актив+", accountType: "Депозитный", balance: '13000', currency: 'UAN'},
-    ];
 
     console.log("--- AccountsCtrl ---");
 }]);
@@ -142,15 +107,18 @@ bankSystem.controller('accountsCtrl', ['$scope', '$http', function ($scope, $htt
 bankSystem.controller('newAccountCtrl', ['$scope', '$http', function ($scope, $http){
     $scope.currensyList = ["USD", "RUB", "UAN"];
     $scope.currency = "UAN";
-    $scope.isError = false;
+    $scope.isAccountNameNotCorrect = false; // flag - is account name isn't correct - set false (correct by default)
 
+    // create new account function
     $scope.createNewAccount = function(){
+        // if account name isn't correct
         if($scope.accountName == undefined || $scope.accountName == ""){
-            $scope.isError = true;
+            $scope.isAccountNameNotCorrect = true; // account name isn't correct
         } else{
-            console.log("accountName: " + $scope.accountName);
-            console.log("currency: " + $scope.currency);
-            $scope.isError = false;
+            console.log("Create new account --- AccountName: " + $scope.accountName + " --- Currency: " + $scope.currency);
+            $scope.isAccountNameNotCorrect = false; // account name is correct
+
+            //do something
         }
     };
 
@@ -166,7 +134,35 @@ bankSystem.controller('operationsCtrl', ['$scope', function($scope){
 }]);
 
 // ---- Replenish account controller ----
-bankSystem.controller('replenishAccountCtrl', ['$scope', function($scope){
+bankSystem.controller('replenishAccountCtrl', ['$scope', '$http', function($scope, $http){
+    $scope.isSumToReplenishNotCorrect = false;  // flag - is sum to replenish isn't correct - set false (correct by default)
+
+    // function to replenish account
+    $scope.replenishAccount = function(){
+        // if sum to replenish isn't correct
+        if($scope.sumToReplenish == undefined || $scope.sumToReplenish == ""){
+            $scope.isSumToReplenishNotCorrect = true; // sum isn't correct
+        } else{
+            $scope.isSumToReplenishNotCorrect = false; // sum is correct
+
+            /*$http({
+                method : "POST",
+                url : "/replenishAccount",
+                data: {
+                        sum : $scope.sumToReplenish
+                      }
+            }).then(
+                function SuccessReplenish(response) {
+                console.log("success replenish");
+            },
+                function ErrorReplenish(response) {
+                    console.log("error replenish");
+            });*/
+        }
+
+        console.log("Payment was successful: " + $scope.sumToTransfer);
+    };
+
     console.log("--- replenishAccountCtrl ---");
 }]);
 
