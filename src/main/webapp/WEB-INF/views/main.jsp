@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>DIY One-way Data Binding</title>
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
-        <link href="/resources/libs/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/resources/libs/css/bootstrap.css" rel="stylesheet">
+        <link href="/resources/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/resources/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/resources/libs/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="/resources/libs/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css"/>
 
         <script src="/resources/libs/bower_components/angular/angular.min.js"></script>
         <script src="/resources/libs/bower_components/jquery/dist/jquery.min.js"></script>
@@ -13,7 +14,8 @@
         <script src="/resources/libs/bower_components/angular-smart-table/dist/smart-table.min.js"></script>
         <script src="/resources/js/app.js"></script>
         <script src="/resources/js/controllers.js"></script>
-        <script src="/resources/js/directivs.js"></script>
+        <script src="/resources/js/directives.js"></script>
+        <script src="/resources/libs/bower_components/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
     <body ng-app="bankSystem">

@@ -1,5 +1,6 @@
 package com.bankSystem.security;
 
+import com.bankSystem.constants.UserRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,7 +19,12 @@ public class BankSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationMgr.inMemoryAuthentication()
                 .withUser("admin@mail.ru")
                 .password("admin")
-                .authorities("USER");
+                .authorities(UserRoles.ROLE_ADMIN);
+
+        authenticationMgr.inMemoryAuthentication()
+                .withUser("user@mail.ru")
+                .password("user")
+                .authorities(UserRoles.ROLE_USER);
     }
 
     @Override
@@ -34,5 +40,6 @@ public class BankSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutSuccessUrl("/login");
 
+        http.csrf().disable();
     }
 }

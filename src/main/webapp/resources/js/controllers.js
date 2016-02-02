@@ -145,19 +145,32 @@ bankSystem.controller('replenishAccountCtrl', ['$scope', '$http', function($scop
         } else{
             $scope.isSumToReplenishNotCorrect = false; // sum is correct
 
-            /*$http({
-                method : "POST",
-                url : "/replenishAccount",
-                data: {
-                        sum : $scope.sumToReplenish
-                      }
-            }).then(
-                function SuccessReplenish(response) {
+            // POST request for account replenishment
+            $http({
+                method: 'POST',
+                url: '/replenishAccount',
+                params: {
+                            sum: $scope.sumToReplenish
+                        },
+                headers: {
+                            'Content-Type': "application/json"
+                         }
+            })
+                .then(
+                function successReplenish(response) {
                 console.log("success replenish");
+                    if(response.data.isReplenishAccountComplete){
+                        // show pop-up window
+                        swal("Account replenishment " + $scope.sumToReplenish + " " + $scope.selectedAccountObj.currency + " was success!",
+                             "Click the button below",
+                             "success");
+
+                        $scope.sumToReplenish = 0; // reset values
+                    }
             },
-                function ErrorReplenish(response) {
+                function errorReplenish(response) {
                     console.log("error replenish");
-            });*/
+            });
         }
 
         console.log("Payment was successful: " + $scope.sumToTransfer);
