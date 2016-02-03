@@ -9,14 +9,19 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class BankSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-        authenticationMgr.inMemoryAuthentication()
+    DataSource dataSource;
+
+    @Autowired
+    public void configAuthentication(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+        /*authenticationMgr.inMemoryAuthentication()
                 .withUser("admin@mail.ru")
                 .password("admin")
                 .authorities(UserRoles.ROLE_ADMIN);
@@ -24,7 +29,15 @@ public class BankSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationMgr.inMemoryAuthentication()
                 .withUser("user@mail.ru")
                 .password("user")
-                .authorities(UserRoles.ROLE_USER);
+                .authorities(UserRoles.ROLE_USER);*/
+
+        authenticationMgr.jdbcAuthentication().dataSource(dataSource)
+                .usersByUsernameQuery(
+                        "select email, password, enabled from users where email=?")
+                .authoritiesByUsernameQuery(
+                        "select email, role from user_roles where email=?");
+
+
     }
 
     @Override

@@ -13,6 +13,7 @@
     <properties>
         <springframework.version>4.0.2.RELEASE</springframework.version>
         <springsecurity.version>4.0.2.RELEASE</springsecurity.version>
+        <mysql.connector.version>5.1.30</mysql.connector.version>
     </properties>
 
 
@@ -98,6 +99,12 @@
             <version>1.2</version>
         </dependency>
 
+        <!-- connect to mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>

@@ -15,14 +15,18 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class LoginController {
 
+    private static final String URL_LOGIN_JSP = "login";
+    private static final String URL_MAIN_JSP = "main";
+    private static final String URL_LOGOUT = "redirect:/login?logout";
+
     @RequestMapping(value = "/login")//, method = RequestMethod.GET)
     public String doLogin(){
-        return "/WEB-INF/views/login.jsp";
+        return URL_LOGIN_JSP;
     }
 
     @RequestMapping("/home")
     public String displayHomePage(){
-        return "/WEB-INF/views/main.jsp";
+        return URL_MAIN_JSP;
     }
 
     @RequestMapping(value="/logout", method = RequestMethod.GET)
@@ -31,6 +35,6 @@ public class LoginController {
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/login?logout";
+        return URL_LOGOUT;
     }
 }
