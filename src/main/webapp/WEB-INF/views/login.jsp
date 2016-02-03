@@ -30,7 +30,7 @@
             <label for="j_password">Password</label>
                 <input type="password" class="form-control" id="j_password" placeholder="Password" name="password">
         </div>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /></strong>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></strong>
         <button type="submit" class="btn btn-default" value="Login">Sign in</button>
     </form>
 
